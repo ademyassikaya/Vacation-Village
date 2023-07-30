@@ -1,0 +1,63 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Mass Activity List</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body style="background-color:#ffc691;">
+		
+		<div class="container" >
+		
+			<center><h3 style="color:white;">Indiviual Activity List sill</h3></center>
+			
+			<hr/>
+			
+			
+			<table class="table table-dark table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>Activity Id</th>
+						<th>Activity Name</th>
+						<th>Internet Link</th>
+						<th>Activity type</th>
+						<th>Age Request</th>
+						<th>Animator Id</th>
+						<th>Date Hour</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="indiviualActivity: ${IndiviualActivity}">
+						<td th:text="${indiviualActivity.ActivityId}" />
+						<td th:text="${indiviualActivity.ActivityName}" />
+						<td th:text="${indiviualActivity.InternetLink}" />
+						<td th:text="${indiviualActivity.ActivityType}" />
+						<td th:text="${indiviualActivity.AgeReq}" />
+						<td th:text="${indiviualActivity.AnimatorId}" />
+						<td th:text="${indiviualActivity.DateHour}" />
+						<td>
+								<form action="#" th:action="@{'http://localhost:8080/IndiviualActivity/{id}'(id=${indiviualActivity.ActivityId})}" method="DELETE">
+    								
+    								<center><button type="submit" name="deleteIndiviualActivity" class="btn btn-outline-danger">
+        								Delete
+    								</button></center>
+								</form>	</td>
+									
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>

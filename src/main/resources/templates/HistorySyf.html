@@ -1,0 +1,64 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>History View</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body style="background-color:#ffc691;">
+		
+		<div class="container" >
+		
+			<center><h3 style="color:white;">History View List</h3></center>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">
+					<a class="btn btn-success" href="http://localhost:8080/customer/dns" role="button">Geri Dön</a>
+				</p>
+			</th>
+			
+			<table class="table table-dark table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>Activity Id</th>
+						<th>Activity Name</th>
+						<th>Activity Type</th>
+						<th>Animator Id</th>
+						<th>Capacity</th>
+						<th>Date</th>
+						<th>Hour</th>
+						<th>Internet</th>
+						<th>Type Actvity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="history: ${History}">
+						<td th:text="${history.ActivityId}" />
+						<td th:text="${history.ActivityName}" />
+						<td th:text="${history.ActivityType}" />
+						<td th:text="${history.AnimatorId}" />
+						<td th:text="${history.Capacity}" />
+						<td th:text="${history.Date}" />
+						<td th:text="${history.Hour}" />
+						<td th:text="${history.Internet}" />
+						<td th:text="${history.TypeActivity}" />
+									
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Animator Hesap</title><!-- Değiştir -->
+        <meta charset="utf-8">
+        <meta name=”title” content=”Oto Anka Performans” /><!-- Değiştir -->
+        <meta name="description" content="Araba yakıt tasarruf ve güç arttırmada en iyi geliştirmeleri sunuyoruz." /><!-- Değiştir -->
+        <meta name="keywords" content="Araba yakıt tasarruf , Araç yazılım , Araç performans arttırımı, chiptuning, Oto Anka Performans, Superchips, Sprintbooster, APR, Supersprint, Volkswagen Racing, BMC Air Filters, Araba yazılımı, Beygir artışı, Araç performans artışı, " /><!-- Değiştir -->
+        <meta name="robots" content="index, follow" />
+        <meta name=”author” content=”OTO ANKA PERFORMANS” /><!-- Değiştir -->
+        <meta name=”owner” content=”OTOANKAPERFORMANS” /><!-- Değiştir -->
+        <meta name=”copyright” content=”(c) 2021″ />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" th:href="@{/images/logo2.png}"><!-- Değiştir -->
+        <link rel="stylesheet" th:href="@{/css/uikit.min.css}" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link th:href="@{/css/style.css}" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" th:src="@{/js/main.js}"></script>
+        <script  th:src="@{/js/uikit.min.js}"></script>
+        <script  th:src="@{/js/uikit-icons.min.js}"></script>
+    </head>
+    <body>
+
+
+        <nav class="navbar" style="background-color:#231f20;">
+
+            <div class="container menu">
+                <a class="navbar-brand" href="index.html" style="margin-left:9%;" >
+                    <img th:src="@{/images/logo25.jpg}" width="200" height="200" alt="OTO ANKA"><!-- Değiştir -->
+                </a>
+                <div class="uk-navbar-right">
+                  <style>
+                  .menu li a{
+                  	color: white;
+                  	font-family: helvetica;
+                  	font-weight: 200;
+                  	font-size: 14px;
+                  	transition: 0.2s;
+                  }
+
+                  .menu li a:hover{
+                  	color: #a7851f;
+                  }
+                  </style>
+                    <ul class="uk-navbar-nav uk-visible@m" style="margin-left:22%;" >
+                        <li><a class="down" href="#araclar">HAKKIMIZDA</a></li>
+                        <li><a class="down" href="#sartlar">MARKALARIMIZ</a></li>
+                        <li><a class="down" href="#hakkimizda">ODALARIMIZ</a></li>
+                        <li><a class="down" href="#iletisim">İLETİŞİM</a></li>
+                    </ul>
+
+                </div>
+                <a class="uk-hidden@m text-white" uk-toggle="target: #offcanvas-flip"><span uk-icon="icon: menu; ratio: 1.5"></span></a>
+            </div>
+            <div>
+            <a class="navbar-brand uk-visible@m" href="https://www.instagram.com/otoankaperformans/" style="float:right;">
+        <img  th:src="@{/images\instagram.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand uk-visible@m" href="#" style="float:right;">
+      <img th:src="@{/images\twitter.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand uk-visible@m" href="#" style="float:right;">
+      <img th:src="@{/images\youtube.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand uk-visible@m" href="#" style="float:right;">
+      <img th:src="@{/images\facebook.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+  </div>
+
+        </nav>
+        <section id="slider" style="margin-top:1px;">
+          <div class="container">
+                                <style>
+                    a:link {
+                        color: white;
+                        text-decoration: none;
+                    }
+                    a:visited {
+                        color: white;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: white;
+                    }
+                    a:active {
+                        color: white;
+                    }
+                    </style>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          </ol>
+          <div class="carousel-inner rounded">
+
+            <div class="carousel-item active">
+          <img th:src="@{/images/bbl4.jpg}" alt="sirket ismi" class="rounded"> <!-- Değiştir -->
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="text-white">Vacation Resort</h5><!-- Değiştir -->
+          </div>
+        </div>
+            <div class="carousel-item rounded">
+          <img th:src="@{/images/bbl3.jpg}" alt="sirket ismi" class="rounded">  <!-- Değiştir -->
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="text-white">Vacation Resort</h5><!-- Değiştir -->
+          </div>
+        </div>
+                  <div class="carousel-item rounded">
+                <img th:src="@{/images/bbl1.jpg}"  alt="sirket ismi" class="rounded"> <!-- Değiştir -->
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="text-white">Vacation Resort</h5><!-- Değiştir -->
+                </div>
+              </div>
+              <div class="carousel-item rounded">
+            <img th:src="@{/images/bbl5.jpg}"  alt="sirket ismi" class="rounded"> <!-- Değiştir -->
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-white">Vacation Resort</h5><!-- Değiştir -->
+            </div>
+          </div>
+          <div class="carousel-item rounded">
+          <img th:src="@{/images/bbl6.jpg}"  alt="sirket ismi" class="rounded"> <!-- Değiştir -->
+          <div class="carousel-caption d-none d-md-block">
+          <h5 class="text-white">Vacation Resort</h5><!-- Değiştir -->
+          </div>
+          </div>
+          <div class="carousel-item rounded">
+          <img th:src="@{/images/bbl2.jpg}"  alt="sirket ismi" class="rounded"> <!-- Değiştir -->
+          <div class="carousel-caption d-none d-md-block">
+          <h5 class="text-white">Vacation Resort</h5><!-- Değiştir -->
+          </div>
+          </div>
+
+              </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="rounded" style="background: #efefef;">
+<div class="row" style="margin-top:5px;">
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin: left;">
+  <img class="card-img-top" th:src="@{/customer2.png}"  alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> Mass Activity Createment </h5>
+    <p class="card-text"> Mass Activity oluşturma sayfası.</p>
+    <form th:action="@{'http://localhost:8080/MassActivity/kyt/{Id}'(Id=${Animator.EmployeeId})}">
+    <input value="Create" type="submit" class="btn btn-primary"></input>
+  </form>
+  </div>
+</div>
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin-left:10px; margin: auto;">
+  <img class="card-img-top" th:src="@{/customer1.jpg}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Mass Activity List Sill</h5>
+    <p class="card-text">Mass Activity varsa listesi.</p>
+    <form th:action="@{'http://localhost:8080/MassActivity/get/Animator/{Id}'(Id=${Animator.EmployeeId})}"><input type="submit" name="add_IndiviualActivity_Create" value="List" class="btn btn-primary"></input></form>
+  </div>
+</div>
+
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin-left:10px; margin: right;">
+  <img class="card-img-top" th:src="@{/customer2.png}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Animator Bilgileri</h5>
+    <a>EmployeeId=</a><a class="card-text" th:text="${Animator.EmployeeId}"></a>
+    <a>  Name=</a><a class="card-text" th:text="${Animator.Name}"></a>
+    <a>  Phone Number=</a><a class="card-text" th:text="${Animator.PhoneNumber}"></a>
+    <a>  Expertise Area=</a><a class="card-text" th:text="${Animator.ExpertiseArea}"></a>
+    <a>  User Password=</a><a class="card-text" th:text="${Animator.AniUserPassword}"></a>
+    <a class="btn btn-success" href="http://localhost:8080/" role="button">Çıkış Yap</a>
+  </div>
+</div>
+</div>
+<div class="row" style="margin-top:5px;">
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin: left;">
+  <img class="card-img-top" th:src="@{/customer2.png}"  alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> Indiviual Activity Createment </h5>
+    <p class="card-text"> Indiviual Activity oluşturma sayfası.</p>
+ <form action="#" th:action="@{'http://localhost:8080/IndiviualActivity/kyt/Mass/{Id}'(Id=${Animator.EmployeeId})}" method="GET">
+          <input type="submit" class="btn btn-primary btn-lg" value="Create">
+      </form>
+  </div>
+</div>
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin-left:10px; margin: auto;">
+  <img class="card-img-top" th:src="@{/customer1.jpg}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Indiviual Activity List sil</h5>
+    <p class="card-text">Mass Activity varsa listesi.</p>
+    <form th:action="@{'http://localhost:8080/IndiviualActivity/kyt/{Id}'(Id=${Animator.EmployeeId})}"><input type="submit" name="add_IndiviualActivity_Create" value="List" class="btn btn-primary"></input></form>
+  </div>
+</div>
+
+
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin-left:10px; margin: right;">
+  <img class="card-img-top" th:src="@{/customer1.jpg}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Equipment Create</h5>
+    <p class="card-text">Equipment Create oluşturma sayfası.</p>
+    <form><a type="submit" value="Create" href="/Equipment/kyt" class="btn btn-primary">Create</a></form>
+  </div>
+</div>
+
+</div>
+<div clas="row" style="margin-top:5px;">
+<div class="card col-md-3" style="width: 25rem; height: 25rem; margin-left:10px; margin: auto;">
+  <img class="card-img-top" th:src="@{/customer1.jpg}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Equipment List sil ve oluştur</h5>
+    <p class="card-text">Equipment varsa emergency info oluşturma listesi.</p>
+    <form><a type="submit" href="/Equipment/get" value="List" class="btn btn-primary">List</a></form>
+  </div>
+</div>
+</div>
+</div>
+      </div>
+                </section>
+
+
+        <div class="arac" id="araclar">
+            <div class="container">
+
+                <h2 class="hakkimizda mt-5" style="text-align:center; font-family: avenir; font-size: 30px; font-weight: 200;">HAKKIMIZDA</h2>
+               <p class="uk-text-left@m"></br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+
+</br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</br>Vacation Resort
+
+
+</p><!-- Değiştir -->
+
+            </div>
+        </div>
+
+
+        <div class="hakkimizda" id="hakkimizda">
+            <div class="container">
+              <div class="card-group">
+                <div class="card">
+                  <img class="card-img-top"  th:src="@{/images/tt1.jpg}" alt="Card image cap" style="height:%100;">
+                  <div class="card-body">
+                    <h5 class="card-title">Lorem Ipsum is simply dummy</h5>
+                    <p class="card-text">Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy</p>
+                    <p class="card-text">#tatilbiz</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" th:src="@{/images/tt2.jpg}" alt="Card image cap" style="height:%100;">
+                  <div class="card-body">
+                    <h5 class="card-title">Lorem Ipsum is simply dummy</h5>
+                    <p class="card-text">Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy</p>
+                    <p class="card-text">#tatilbiz</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" th:src="@{/images/tt3.jpg}" alt="Card image cap" style="height:%100;">
+                  <div class="card-body">
+                    <h5 class="card-title">Lorem Ipsum is simply dummy</h5>
+                    <p class="card-text">Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy</p>
+                    <p class="card-text">#tatilbiz</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-group">
+  <div class="card">
+    <img class="card-img-top"  th:src="@{/images/tt4.jpg}" alt="Card image cap" style="height:%100;">
+    <div class="card-body">
+                    <h5 class="card-title">Lorem Ipsum is simply dummy</h5>
+                    <p class="card-text">Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy</p>
+                    <p class="card-text">#tatilbiz</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top"  th:src="@{/images/tt5.jpg}" alt="Card image cap" style="height:%100;">
+    <div class="card-body">
+                    <h5 class="card-title">Lorem Ipsum is simply dummy</h5>
+                    <p class="card-text">Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy</p>
+                    <p class="card-text">#tatilbiz</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top"  th:src="@{/images/tt6.jpg}" alt="Card image cap" style="height:%100;">
+    <div class="card-body">
+                    <h5 class="card-title">Lorem Ipsum is simply dummy</h5>
+                    <p class="card-text">Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy</p>
+                    <p class="card-text">#tatilbiz</p>
+    </div>
+  </div>
+</div>
+            </div>
+        </div>
+
+        <div class="iletisim" id="iletisim" style="background-color:#a7851f;">
+            <div class="container">
+                <h2>İLETİŞİM</h2>
+                <hr class="uk-divider-small" style="text-align: center; color: black;">
+
+
+                <div class="container">
+                  <div class="row">
+                  <div class="col-md-4">
+                        <form action="" method="post">
+                            <input type="text" class="form-control" id="formGroupExampleInput" name="ad" placeholder="İsim - Soyisim">
+                            <input type="number" class="form-control my-2" id="formGroupExampleInput" name="konu" placeholder="Telefon Numarası">
+                            <input type="email" class="form-control my-2" id="exampleInputEmail1" name="eposta" placeholder="e-mail">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="mesaj" placeholder="Mesaj" rows="5"></textarea>
+                            <button type="submit" value="gonder" class="btn my-2" style="background-color:#231f20; color:white;">GÖNDER</button>
+                        </form>
+                      </div>
+                      <div class="col-md-4" style="float: center; color:white; ">
+                        <ul style="list-style-type:none;">
+                          <li><h5>Cep Telefonu</h5><p></p></li>
+                          <li><h5>Sabit Hat</h5><p>‎</p></li>
+                          <li><h5>Mail</h5><p></p></li>
+                          <li><h5>Adres</h5><p></p></li>
+
+                        </ul>
+                      </div>
+                      <div class="col-md-4" style="float:right;">
+                          <div id="map-container-google-1" class="z-depth-1-half map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.3318377424844!2d34.982502915561035!3d32.80997148961076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151dbbaf98e8d01b%3A0xc9c5fc4c4eff0ec!2sDan%20Carmel%20Haifa%20Hotel!5e0!3m2!1str!2str!4v1651886064824!5m2!1str!2str" width="500" height="275" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer style="background-color:#231f20;">
+            <p style="color:white;">Vacation Resort &nbsp;&nbsp;| &nbsp;&nbsp;©2022 Tüm Hakları Saklıdır.</p><!-- Değiştir -->
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Mass Activity List</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body style="background-color:#ffc691;">
+		
+		<div class="container" >
+		
+			<center><h3 style="color:white;">Mass Activity List Sil</h3></center>
+			
+			<hr/>
+			
+			
+			<table class="table table-dark table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>Activity Id</th>
+						<th>Activity Name</th>
+						<th>Type of Activity</th>
+						<th>Activity type</th>
+						<th>Date</th>
+						<th>Hour</th>
+						<th>Internet Link</th>
+						<th>Capacity</th>
+						<th>Animator Id</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="massActivity: ${MassActivity}">
+						<td th:text="${massActivity.ActivityId}" />
+						<td th:text="${massActivity.ActivityName}" />
+						<td th:text="${massActivity.TypeActivity}" />
+						<td th:text="${massActivity.ActivityType}" />
+						<td th:text="${massActivity.Date}" />
+						<td th:text="${massActivity.Hour}" />
+						<td th:text="${massActivity.Internet}" />
+						<td th:text="${massActivity.Capacity}" />
+						<td th:text="${massActivity.AnimatorId}" />
+						<td>
+								<form action="#" th:action="@{'http://localhost:8080/MassActivity/{id}'(id=${massActivity.ActivityId})}" method="DELETE">
+    								
+    								<center><button type="submit" name="deleteMassActivity" class="btn btn-outline-danger">
+        								Delete
+    								</button></center>
+								</form>	</td>
+								<td>
+							<form action="#" th:action="@{'http://localhost:8080/emergencyInfo/get/{Id}'(Id=${massActivity.ActivityId})}" method="GET">		
+    								<center><input value="Emergency Info Create" type="submit" class="btn btn-outline-danger">
+        								
+    								</input></center>
+								</form>	</td>
+									
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>

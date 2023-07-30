@@ -1,0 +1,71 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Emergency info List and Create</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body style="background-color:#ffc691;">
+		
+		<div class="container" >
+		
+			<center><h3 style="color:white;">Emergency Info List and Create</h3></center>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">
+					<a class="btn btn-success" href="http://localhost:8080/customer/dns" role="button">Geri Dön</a>
+				</p>
+			</th>
+			
+			<table class="table table-dark table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>Locker Number</th>
+						<th>Activity Id</th>
+						<th>Phone Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="emergencyInfo: ${EmergencyInfo}">
+						<td th:text="${emergencyInfo.LockerNumber}" />
+						<td th:text="${emergencyInfo.ActivityId}" />
+						<td th:text="${emergencyInfo.PhoneNumber}" />
+								<form action="#" th:action="@{'http://localhost:8080/emergencyInfo/{id}'(id=${emergencyInfo.LockerNumber})}" method="DELETE" >
+    								<td>
+    								<center><input value="Delete"type="submit" class="btn btn-outline-danger">
+    								</input></center>
+								</td></form>	
+									
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			<div class="row">
+			<form th:action="@{'http://localhost:8080/emergencyInfo/post'}">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">Locker Number</label>
+			    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="LockerNumber" minlength="10" maxlength="11" placeholder="Enter locker number">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Phone Number</label>
+			    <input type="text" class="form-control" id="exampleInputPassword1" minlength="10" maxlength="11" name="PhoneNumber" placeholder="Phone Number">
+			  </div>
+			  <button type="submit" class="btn btn-primary" name="add" method="POST">Create</button>
+	</form>
+	</div>
+		</div>
+		
+		
+	</body>
+	
+</html>

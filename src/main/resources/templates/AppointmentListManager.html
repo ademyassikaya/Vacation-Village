@@ -1,0 +1,61 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Animator List</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body style="background-color:#ffc691;">
+		
+		<div class="container" >
+		
+			<center><h3 style="color:white;">Appointment List sil</h3></center>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">
+					<a class="btn btn-success" href="http://localhost:8080/customer/dns" role="button">Geri Dön</a>
+				</p>
+			</th>
+			
+			<table class="table table-dark table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>Activity Id</th>
+						<th>Customer Id</th>
+						<th>Animator Id</th>
+						<th>Date Hour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="appointment: ${Appointment}">
+						<td th:text="${appointment.ActivityId}" />
+						<td th:text="${appointment.CustomerId}" />
+						<td th:text="${appointment.AnimatorId}" />
+						<td th:text="${appointment.DateHour}" />
+						<td>
+							<p align="right">
+								<form action="#" th:action="@{'http://localhost:8080/appointment/{id}'(id=${appointment.ActivityId})}" th:method="deleteAppointment" >
+    								<center><button href="/appointment/get" type="submit" class="btn btn-outline-danger">
+        								Appointment Sil
+    								</button></center>
+								</form>	</td>
+									
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>

@@ -1,0 +1,61 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Equip Person List</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body style="background-color:#ffc691;">
+		
+		<div class="container" >
+		
+			<center><h3 style="color:white;">Equip Person List</h3></center>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">
+					<a class="btn btn-success" href="http://localhost:8080/customer/dns" role="button">Geri Dön</a>
+				</p>
+			</th>
+			
+			<table class="table table-dark table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>Ssn</th>
+						<th>Name</th>
+						<th>Surname</th>
+						<th>Phone Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="equipPerson: ${EquipPerson}">
+						<td th:text="${equipPerson.Ssn}" />
+						<td th:text="${equipPerson.Name}" />
+						<td th:text="${equipPerson.Surname}" />
+						<td th:text="${equipPerson.EquPhoneNumber}" />
+						<td>
+							<p align="right">
+								<form action="#" th:action="@{'http://localhost:8080/equipPerson/{id}'(id=${equipPerson.Ssn})}" th:method="deleteEquipPerson" >
+    								<center><button href="/equipPerson/get" type="submit" class="btn btn-outline-danger">
+        								Equip Person Sil
+    								</button></center>
+								</form>	</td>
+									
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>
